@@ -33,7 +33,7 @@ public class SongListener {
         return playlist.stream().anyMatch(s -> s.equals(song));
     }
 
-    @Scheduled(cron = "${playlist..cron}")
+    @Scheduled(cron = "${playlist.cron}")
     public void play() {
         try {
             var song = playlist.stream().findFirst();
